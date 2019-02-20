@@ -8,8 +8,7 @@ class App extends Component {
     this.state = {};
   }
 
-  async componentWillMount() {
-    console.log(RESOURCES_URL);
+  componentWillMount() {
     fetch(RESOURCES_URL, {
       headers: {
         'Content-Type': 'application/json',
@@ -29,7 +28,7 @@ class App extends Component {
     return (
       <div className="content">
 
-        <h1>React-serveless app template</h1>
+        <h1>React-Serverless app template</h1>
         <p>Here is some mock data fetched from the server:</p>
         { resources && (
           <ul>
