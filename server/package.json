@@ -1,0 +1,11 @@
+{
+  "name": "my-serverless-project",
+  "description": "",
+  "version": "0.1.0",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "serverless-offline": "^4.4.2",
+    "serverless-python-requirements": "^4.3.0"
+  }
+}
