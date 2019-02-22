@@ -12,7 +12,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && aws s3 sync build/ s3://serverless-react-template-frontend"
+    "deploy": "npm run build && aws s3 sync build/ s3://serverless-react-template-frontend",
+    "open:dev": "open http://localhost:3000",
+    "open:prod": "open http://my-bucket-name.s3-website.region.amazonaws.com"
   },
   "browserslist": [
     ">0.2%",
