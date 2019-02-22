@@ -3,7 +3,7 @@ const config = {
     BACKEND_URL: 'http://localhost:3001',
   },
   production: {
-    BACKEND_URL: 'https://byqoa7pqz5.execute-api.eu-north-1.amazonaws.com/dev/',
+    BACKEND_URL: 'https://byqoa7pqz5.execute-api.eu-north-1.amazonaws.com/dev',
   },
 };
 const { BACKEND_URL } = config[process.env.NODE_ENV];
