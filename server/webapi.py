@@ -1,3 +1,6 @@
+"""
+Example handler
+"""
 import json
 from lambda_decorators import cors_headers
 
@@ -8,4 +11,7 @@ MOCK_DATA = [
 
 @cors_headers
 def handler(event, context):
-    return {"statusCode": 200,  "body": json.dumps(MOCK_DATA)}
+    """
+    returns mock data
+    """
+    return {"statusCode": 200, "body": json.dumps(MOCK_DATA)}
