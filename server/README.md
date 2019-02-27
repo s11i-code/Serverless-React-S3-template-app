@@ -7,6 +7,6 @@
 ## Using in production
 1. run `sls deploy` to deploy your local code to production.
 
-#Adding a Python dependency
+## Adding a Python dependency
 1. Add the package to requirements.txt.
 2. Run `pip install -r requirements.txt`.
