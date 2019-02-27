@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
-import { RESOURCES_URL } from './utils/urls';
+import { BrowserRouter, Route } from 'react-router-dom';
+import './index.css';
+import { RESOURCES_URL } from '../utils/urls';
+import HomePage from './pages/Home';
 
 class App extends Component {
   constructor() {
@@ -24,19 +26,16 @@ class App extends Component {
 
   render() {
     const { resources } = this.state;
-
+    console.log(resources);
     return (
-      <div className="content">
+      <BrowserRouter>
+        <div className="content">
 
-        <h1>React-Serverless app template</h1>
-        <p>Here is some mock data fetched from the server:</p>
-        { resources && (
-          <ul>
-            {resources.map(resource => <li>{ resource.message }</li>)}
-          </ul>
-        )}
 
-      </div>
+          <Route path="/" render={() => <HomePage resources={resources || []} />} />
+
+        </div>
+      </BrowserRouter>
     );
   }
 }
