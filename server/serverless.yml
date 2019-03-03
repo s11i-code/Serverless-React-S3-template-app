@@ -123,3 +123,6 @@ functions:
 plugins:
   - serverless-python-requirements
   - serverless-offline
+
+resources:
+  - ${file(resources/api-gateway-errors.yml)}
