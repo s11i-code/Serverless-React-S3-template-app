@@ -11,7 +11,8 @@
 #
 # Happy Coding!
 
-service: my-serverless-project # NOTE: update this with your service name
+service: sls-python-react-template # NOTE: update this with your service name
+profile: ${self:service}
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
