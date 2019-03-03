@@ -1,0 +1,18 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "## Using in development 0. This app uses python 3.6 in production so you should use it in your dev env too. 1. run `sls offline` to start the server in development.",
+  "main": ".eslintrc.js",
+  "dependencies": {
+    "eslint": "^5.14.1",
+    "serverless": "^1.38.0",
+    "serverless-offline": "^4.7.1",
+    "serverless-python-requirements": "^4.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
