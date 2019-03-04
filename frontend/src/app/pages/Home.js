@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { API } from 'aws-amplify';
-
+import stringHash from 'string-hash';
 
 class HomePage extends Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class HomePage extends Component {
         <p>Here is some mock data fetched from the server:</p>
         <ul>
           {resources.map(resource => (
-            <li>{ resource.message }</li>))}
+            <li key={stringHash(resource.message)}>{ resource.message }</li>))}
         </ul>
       </>
     );
