@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import stringHash from 'string-hash';
 
 const HomePage = ({ resources }) => (
   <>
@@ -7,7 +8,8 @@ const HomePage = ({ resources }) => (
     <p>Here is some mock data fetched from the server:</p>
     { resources && (
       <ul>
-        {resources.map(resource => <li>{ resource.message }</li>)}
+        {resources.map(resource => (
+          <li key={stringHash(resource.message)}>{ resource.message }</li>))}
       </ul>
     )}
   </>
