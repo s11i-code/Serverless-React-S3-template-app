@@ -21,47 +21,13 @@ profile: ${self:service}
 provider:
   name: aws
   runtime: python3.6
-  region: eu-north-1
+  region: eu-central-1
 
 custom:
   pythonRequirements:
     dockerizePip: true
   serverless-offline:
     port: 3001
-
-
-# you can overwrite defaults here
-#  stage: dev
-#  region: us-east-1
-
-# you can add statements to the Lambda function's IAM Role here
-#  iamRoleStatements:
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:ListBucket"
-#      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:PutObject"
-#      Resource:
-#        Fn::Join:
-#          - ""
-#          - - "arn:aws:s3:::"
-#            - "Ref" : "ServerlessDeploymentBucket"
-#            - "/*"
-
-# you can define service wide environment variables here
-#  environment:
-#    variable1: value1
-
-# you can add packaging information here
-#package:
-#  include:
-#    - include-me.py
-#    - include-me-dir/**
-#  exclude:
-#    - exclude-me.py
-#    - exclude-me-dir/**
 
 functions:
   hello:
@@ -74,6 +40,7 @@ functions:
       - http:
           path: /resources
           method: get
+          authorizer: aws_iam
           cors: true
 
 #    The following are a few example events you can configure
@@ -127,3 +94,5 @@ plugins:
 
 resources:
   - ${file(resources/api-gateway-errors.yml)}
+  - ${file(resources/cognito-user-pool.yml)}
+  - ${file(resources/cognito-identity-pool.yml)}
