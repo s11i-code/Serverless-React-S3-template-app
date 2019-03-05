@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 class LoginPage extends Component {
   static propTypes={
     setAuthenticated: PropTypes.func.isRequired,
-    history: PropTypes.shape({}).isRequired,
   }
 
   constructor() {
@@ -27,13 +26,13 @@ class LoginPage extends Component {
   handleSubmit = async (event) => {
     event.preventDefault();
     const { email, password } = this.state;
-    const { setAuthenticated, history } = this.props;
+    const { setAuthenticated } = this.props;
 
     try {
       await Auth.signIn(email, password);
       setAuthenticated(true);
-      history.push('/');
     } catch (e) {
+      // e.g wrong password or email
       console.log(e);
       alert(e.message);
     }

@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { Auth } from 'aws-amplify';
 
 const MESSAGES = {
-  success: 'Your account was successfully created. It will become usable after the admin confirms it. ',
+  success: 'Your account was successfully created. It will become valid after it has been confirmed by an admin. ',
   passwords_unmatched: 'Your passwords do not match.',
 };
+
 export default class Signup extends Component {
   constructor(props) {
     super(props);
