@@ -1,5 +1,7 @@
 This is a template for Serverless Framework / Python backend with a React frontend hosted in S3.
 
+There's version with Cognito auth in a separate branch. 
+
 ### TODOS for the initial setup
 1. Go through the steps in server README to deploy the backend.
 2. After the first deploy, you get the url where the app is hosted. Add it in the config.js file in frontend folder.
