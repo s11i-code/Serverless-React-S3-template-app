@@ -12,7 +12,6 @@
 # Happy Coding!
 
 service: sls-python-react-template # NOTE: update this with your service name
-profile: ${self:service}
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
@@ -22,6 +21,7 @@ provider:
   name: aws
   runtime: python3.6
   region: eu-central-1
+  profile: ${self:service}
 
 custom:
   pythonRequirements:
